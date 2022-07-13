@@ -1,6 +1,32 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from '@/components/HelloWorld.vue'
+import { db } from './utils/firebase'
+import { collection, getDocs } from 'firebase/firestore'
+// export default {
+//   mounted() {
+//     this.getRamas();
+//   },
+//   data() {
+//     return{
+//       ramas: [],
+
+//     }
+//   },
+//   methods: {
+//     async getRamas() {
+//       const querySnapshot = await getDocs(collection(db, "ramas"))
+//       querySnapshot.forEach((doc) => {
+//         const rama = {
+//           id: doc.id,
+//           titulo: doc.data().titulo
+//         }
+//         this.ramas.push(rama);
+//       });
+//     }
+//   },
+
+// }
 </script>
 
 <template>
@@ -9,7 +35,6 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -19,6 +44,9 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
   <RouterView />
 </template>
+
+
+
 
 <style>
 @import '@/assets/base.css';
