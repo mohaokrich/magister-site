@@ -1,0 +1,58 @@
+/** FONTS IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,800&display=swap');
+/** COLOR VARIABLES */
+$main-color: #0A3868;
+$link-color: #0BC6FE;
+$link-hover-color: #17a5cc;
+$inactive-menu-color: #577294;
+$bg-content-color: #FFFDFB;
+$text-color: #ffffff;
+
+
+#app,
+body,
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+/** SPLASH */
+.main-splash {
+    background-color: $main-color;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    color: $text-color;
+
+    .header-splash {
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    .footer-splash {
+        .route-button {
+            background-color: $link-color;
+            width: 100%;
+            height: auto;
+            color: $text-color;
+
+            &:hover {
+                background-color: $link-hover-color;
+                color: $text-color;
+
+            }
+        }
+
+        a {
+            color: $link-color;
+
+            &:hover {
+                color: $link-hover-color;
+            }
+        }
+    }
+}

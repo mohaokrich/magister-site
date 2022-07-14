@@ -1,0 +1,42 @@
+/** FONTS IMPORT */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,800&display=swap");
+/** COLOR VARIABLES */
+#app,
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+}
+
+/** SPLASH */
+.main-splash {
+  background-color: #0A3868;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+}
+.main-splash .header-splash img {
+  width: auto;
+  height: 100%;
+}
+.main-splash .footer-splash .route-button {
+  background-color: #0BC6FE;
+  width: 100%;
+  height: auto;
+  color: #ffffff;
+}
+.main-splash .footer-splash .route-button:hover {
+  background-color: #17a5cc;
+  color: #ffffff;
+}
+.main-splash .footer-splash a {
+  color: #0BC6FE;
+}
+.main-splash .footer-splash a:hover {
+  color: #17a5cc;
+}
+
+/*# sourceMappingURL=styles.css.map */
