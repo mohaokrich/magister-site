@@ -19,7 +19,7 @@ import { RouterLink } from 'vue-router'
                     para</span> <span>darte el mejor servicio.</span></h2>
         </section>
         <footer class="footer-splash mb-28 mt-28 flex flex-col">
-            <RouterLink to="/home" class="route-button border border-transparent mb-5 text-xl py-2 px-8 sm:px-12 md:px-16 rounded-lg font-bold shadow-xl">Comenzar</RouterLink>
+            <RouterLink to="/especialidad" class="route-button border border-transparent mb-5 text-xl py-2 px-8 sm:px-12 md:px-16 rounded-lg font-bold shadow-xl">Comenzar</RouterLink>
             <a class="text-center text-xl font-bold" href="#">Volver atrás</a>
         </footer>
     </main>

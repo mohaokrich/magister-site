@@ -5,28 +5,49 @@ $main-color: #0A3868;
 $link-color: #0BC6FE;
 $link-hover-color: #17a5cc;
 $inactive-menu-color: #577294;
+$layaout-text-color: #577294;
 $bg-content-color: #FFFDFB;
 $text-color: #ffffff;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-#app,
-body,
 html {
     height: 100%;
+}
+
+body {
+    min-height: 100%;
     width: 100%;
     font-family: 'Nunito', sans-serif;
 }
 
+#app {
+    height: 100vh;
+    width: 100%;
+}
+.route-button {
+    background-color: $link-color;
+    color: $text-color;
+
+    &:hover {
+        background-color: $link-hover-color;
+        color: $text-color;
+
+    }
+}
 /** SPLASH */
 .main-splash {
     background-color: $main-color;
-    height: 100%;
-    width: 100%;
     display: grid;
     place-items: center;
     color: $text-color;
+    min-height: 100%;
 
-    .header-splash {
+    wi .header-splash {
         img {
             width: auto;
             height: 100%;
@@ -36,8 +57,6 @@ html {
     .footer-splash {
         .route-button {
             background-color: $link-color;
-            width: 100%;
-            height: auto;
             color: $text-color;
 
             &:hover {
@@ -53,6 +72,72 @@ html {
             &:hover {
                 color: $link-hover-color;
             }
+        }
+    }
+}
+
+/** LAYOUT */
+.layout-container {
+    display: flex;
+    color: $layaout-text-color;
+    min-height: 100%;
+    width: 100%;
+    .layout-aside {
+        background-color: $main-color;
+        flex: 1 0 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100%;
+
+        nav {
+            display: flex;
+            align-items: center;
+            .vert-line{
+                position: absolute;
+                border-left: 5px solid $inactive-menu-color;
+                height: 400px;
+                margin-left: 16px;
+                z-index: 5;
+            }
+            ul {
+                z-index: 10;
+                position: relative;
+                li {
+                    display: flex;
+                    align-items: center;
+                    span {
+                        padding-bottom: 3%;
+                        padding-right: 3%;
+                    }
+                }
+            }
+        }
+        footer {
+            bottom: 0;
+            left: 10;
+            z-index: 20;
+        }
+    }
+
+    .layout-section {
+        background-color: $bg-content-color;
+        flex: 2 0 0;
+        display: flex;
+        flex-direction: column;
+        nav{
+            flex: 0.5 0 0;
+        }
+        main{
+            flex: 4 0 0;
+        }
+        footer {
+            flex: 1 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
     }
 }
