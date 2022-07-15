@@ -1,7 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from '@/components/HelloWorld.vue'
-import { db } from './utils/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 // export default {
 //   mounted() {
