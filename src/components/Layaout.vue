@@ -61,10 +61,10 @@ export default {
                     <img src="../../public/img/menu-icon-gray.svg" alt="menu-icon" class="h-10 w-10 md:h-16 md:w-16" />
                 </a>
             </nav>
-            <main>
+            <main class="p-10">
                 <slot />
             </main>
-            <footer>
+            <footer class="mb-20">
                 <button
                     class="route-button border border-transparent mb-5 text-xl py-2 px-8 sm:px-12 md:px-16 rounded-lg font-bold shadow-xl" @click="nextPage()">
                     Siguiente</button>
