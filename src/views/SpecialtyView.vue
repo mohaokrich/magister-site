@@ -47,8 +47,8 @@ const options = [
             <article class="antiguedad">
                     <h3 class="text-xl font-extrabold">¿Has sido alumn@ de Magister?</h3>
                     <a class="text-xl text-[#0BC6FE] font-semibold" href="#">Consulta condiciones ></a>
-                    <ul class="flex md:grid-cols-3 lg:flex-row flex-col">
-                        <li v-for= "option in options" :key = "option.id" class="mr-8 space-y-6">
+                    <ul class="flex md:grid-cols-3 lg:flex-row flex-col gap-4">
+                        <li v-for= "option in options" :key = "option.id" class="space-y-6">
                             <input type="radio" :id="option.value" name="hosting" :value="option.value" class="hidden peer"
                                 required>
                             <label :for="option.value"

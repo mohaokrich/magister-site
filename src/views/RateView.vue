@@ -13,12 +13,12 @@ import { rates } from '../utils/firebase-data'
         <section class="full-w flex flex-col justify-center space-y-28">
             <article>
                 <div>
-                    <h3 class="text-xl font-extrabold">Horario</h3>
+                    <h3 class="text-xl font-extrabold">Tarifas</h3>
                     <h4 class="text-xl font-extralight">(Selecciona una opción)</h4>
                 </div>
                 <div>
                     <ul class="grid gap-4 grid-cols-1">
-                        <li v-for="rate in rates" :key="rate.id" class="mr-8 space-y-6">
+                        <li v-for="rate in rates" :key="rate.id" class="space-y-6">
                             <input type="radio" :id="rate.titulo" name="options" :value="rate.titulo" class="hidden peer"
                                 required>
                             <label :for="rate.titulo"
