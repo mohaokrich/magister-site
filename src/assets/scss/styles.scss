@@ -1,0 +1,173 @@
+/** FONTS IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,800&display=swap');
+/** COLOR VARIABLES */
+$main-color: #0A3868;
+$link-color: #0BC6FE;
+$link-hover-color: #17a5cc;
+$inactive-menu-color: #577294;
+$layaout-text-color: #577294;
+$bg-content-color: #FFFDFB;
+$text-color: #ffffff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    font-family: 'Nunito', sans-serif;
+}
+
+#app {
+    height: 100vh;
+    width: 100%;
+}
+.route-button {
+    background-color: $link-color;
+    color: $text-color;
+
+    &:hover {
+        background-color: $link-hover-color;
+        color: $text-color;
+
+    }
+}
+/** SPLASH */
+.main-splash {
+    background-color: $main-color;
+    display: grid;
+    place-items: center;
+    color: $text-color;
+    min-height: 100%;
+
+    wi .header-splash {
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    .footer-splash {
+        .route-button {
+            background-color: $link-color;
+            color: $text-color;
+
+            &:hover {
+                background-color: $link-hover-color;
+                color: $text-color;
+
+            }
+        }
+
+        a {
+            color: $link-color;
+
+            &:hover {
+                color: $link-hover-color;
+            }
+        }
+    }
+}
+
+/** LAYOUT */
+.layout-container {
+    display: flex;
+    color: $layaout-text-color;
+    min-height: 100%;
+    width: 100%;
+    
+    @media (max-width: 645px) {
+        display: grid;
+    
+    }
+    .layout-aside {
+        background-color: $main-color;
+        flex: 1 0 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100%;
+
+        // @media (max-width: 1200px) {
+        //     flex: 2 0 0;
+        
+        // }
+
+        nav {
+            display: flex;
+            align-items: center;
+            .vert-line{
+                position: absolute;
+                border-left: 5px solid $inactive-menu-color;
+                height: 400px;
+                margin-left: 16px;
+                z-index: 5;
+            }
+            ul {
+                z-index: 10;
+                position: relative;
+                li {
+                    display: flex;
+                    align-items: center;
+                    span {
+                        padding-bottom: 3%;
+                        padding-right: 3%;
+                    }
+                }
+            }
+        }
+        footer {
+            bottom: 0;
+            left: 10;
+            z-index: 20;
+            img{
+                @media (max-width: 645px) {
+                    display: none;
+                
+                }
+            }
+        }
+    }
+
+    .layout-section {
+        background-color: $bg-content-color;
+        flex: 2 0 0;
+        display: flex;
+        flex-direction: column;
+        nav{
+            flex: 0.5 0 0;
+        }
+        main{
+            flex: 4 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+        }
+        footer {
+            flex: 1 0 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

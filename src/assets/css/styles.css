@@ -1,0 +1,150 @@
+/** FONTS IMPORT */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;1,800&display=swap");
+/** COLOR VARIABLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+}
+
+#app {
+  height: 100vh;
+  width: 100%;
+}
+
+.route-button {
+  background-color: #0BC6FE;
+  color: #ffffff;
+}
+.route-button:hover {
+  background-color: #17a5cc;
+  color: #ffffff;
+}
+
+/** SPLASH */
+.main-splash {
+  background-color: #0A3868;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  min-height: 100%;
+}
+.main-splash wi .header-splash img {
+  width: auto;
+  height: 100%;
+}
+.main-splash .footer-splash .route-button {
+  background-color: #0BC6FE;
+  color: #ffffff;
+}
+.main-splash .footer-splash .route-button:hover {
+  background-color: #17a5cc;
+  color: #ffffff;
+}
+.main-splash .footer-splash a {
+  color: #0BC6FE;
+}
+.main-splash .footer-splash a:hover {
+  color: #17a5cc;
+}
+
+/** LAYOUT */
+.layout-container {
+  display: flex;
+  color: #577294;
+  min-height: 100%;
+  width: 100%;
+}
+@media (max-width: 645px) {
+  .layout-container {
+    display: grid;
+  }
+}
+.layout-container .layout-aside {
+  background-color: #0A3868;
+  flex: 1 0 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+}
+.layout-container .layout-aside nav {
+  display: flex;
+  align-items: center;
+}
+.layout-container .layout-aside nav .vert-line {
+  position: absolute;
+  border-left: 5px solid #577294;
+  height: 400px;
+  margin-left: 16px;
+  z-index: 5;
+}
+.layout-container .layout-aside nav ul {
+  z-index: 10;
+  position: relative;
+}
+.layout-container .layout-aside nav ul li {
+  display: flex;
+  align-items: center;
+}
+.layout-container .layout-aside nav ul li span {
+  padding-bottom: 3%;
+  padding-right: 3%;
+}
+.layout-container .layout-aside footer {
+  bottom: 0;
+  left: 10;
+  z-index: 20;
+}
+@media (max-width: 645px) {
+  .layout-container .layout-aside footer img {
+    display: none;
+  }
+}
+.layout-container .layout-section {
+  background-color: #FFFDFB;
+  flex: 2 0 0;
+  display: flex;
+  flex-direction: column;
+}
+.layout-container .layout-section nav {
+  flex: 0.5 0 0;
+}
+.layout-container .layout-section main {
+  flex: 4 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.layout-container .layout-section footer {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/*# sourceMappingURL=styles.css.map */
