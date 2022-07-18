@@ -3,7 +3,21 @@ import Layaout from '../components/Layaout.vue';
 import { rates } from '../utils/firebase-data'
 
 </script>
+<script>
+export default {
+    computed: {
+        tarifa: {
+            get() {
+                return this.$store.state.tarifa
+            },
+            set(value) {
+                this.$store.commit('setTarifa', value)
+            }
+        },
+    }
+};
 
+</script> 
 
 <template>
     <Layaout>
@@ -19,7 +33,7 @@ import { rates } from '../utils/firebase-data'
                 <div>
                     <ul class="grid gap-4 grid-cols-1">
                         <li v-for="rate in rates" :key="rate.id" class="space-y-6">
-                            <input type="radio" :id="rate.titulo" name="options" :value="rate.titulo" class="hidden peer"
+                            <input type="radio" v-model="tarifa" :id="rate.titulo" name="options" :value="rate.titulo" class="hidden peer"
                                 required>
                             <label :for="rate.titulo"
                                 class="inline-flex justify-between items-center p-5 sm:px-8 w-full text-gray-500 bg-white rounded-lg border border-blue-900 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#0A3868] peer-checked:bg-[#0A3868]  peer-checked:text-white  hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">

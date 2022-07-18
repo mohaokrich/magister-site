@@ -3,17 +3,61 @@
 import { RouterLink } from 'vue-router'
 import router from '../router'
 import NavItem from '../components/NavItem.vue'
-
+import { collection, addDoc } from '@firebase/firestore';
+import { db } from '../utils/firebase-config'
 
 </script>
 <script>
 export default {
-    methods:{
-        prevPage(){
-            this.$router.push({ name: this.$router.currentRoute.value.meta.prev})
+    methods: {
+        prevPage() {
+            this.$router.push({ name: this.$router.currentRoute.value.meta.prev })
         },
-        nextPage(){
-            this.$router.push({ name: this.$router.currentRoute.value.meta.next })
+        nextPage() {
+            if (this.$route.name == 'Pago') {
+                this.post();
+                this.$router.push({ name: this.$router.currentRoute.value.meta.next })
+            } else {
+                this.$router.push({ name: this.$router.currentRoute.value.meta.next })
+            }
+        },
+        async post() {
+             var currentdate = new Date(); 
+             var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+             addDoc(collection(db, "matricula"), {
+                especializacion: {
+                    rama: this.$store.state.rama,
+                    provincia: this.$store.state.provincia,
+                    es_alumno: this.$store.state.provincia
+                },
+                modalidad: this.$store.state.modalidad,
+                horario: this.$store.state.horario,
+                tarifa: this.$store.state.tarifa,
+                datos_personales: {
+                    nombre: this.$store.state.nombre,
+                    dni: this.$store.state.dni,
+                    movil: this.$store.state.movil,
+                    email: this.$store.state.email,
+                },
+                direccion:{
+                    comunidad: this.$store.state.comunidad,
+                    via: this.$store.state.direccion,
+                    localidad: this.$store.state.localidad,
+                    provincia: this.$store.state.provincia,
+                    cp: this.$store.state.cp
+                },
+                pago:{
+                    forma: this.$store.state.tarjeta,
+                    recomendado: this.$store.state.recomendado
+                },
+                fecha:datetime
+            });
         }
     }
 };
@@ -62,11 +106,14 @@ export default {
                 </a>
             </nav>
             <main class="p-10">
-                <slot />
+                <form action="">
+                    <slot />
+                </form>
             </main>
             <footer class="mb-20">
                 <button
-                    class="route-button border border-transparent mb-5 text-xl py-2 px-8 sm:px-12 md:px-16 rounded-lg font-bold shadow-xl" @click="nextPage()">
+                    class="route-button border border-transparent mb-5 text-xl py-2 px-8 sm:px-12 md:px-16 rounded-lg font-bold shadow-xl"
+                    @click="nextPage()">
                     Siguiente</button>
                 <button class="text-center text-xl font-bold" @click="prevPage()">Volver atrás
                 </button>

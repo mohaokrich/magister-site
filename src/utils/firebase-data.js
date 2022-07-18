@@ -63,6 +63,7 @@ querySnapshot[5].forEach((doc) => {
     communities.push(comunidad);
 });
 
+
 export {ramas,
     modalities,
     dates,

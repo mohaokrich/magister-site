@@ -1,30 +1,16 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import { collection, getDocs } from 'firebase/firestore'
-// export default {
-//   mounted() {
-//     this.getRamas();
-//   },
-//   data() {
-//     return{
-//       ramas: [],
 
-//     }
-//   },
-//   methods: {
-//     async getRamas() {
-//       const querySnapshot = await getDocs(collection(db, "ramas"))
-//       querySnapshot.forEach((doc) => {
-//         const rama = {
-//           id: doc.id,
-//           titulo: doc.data().titulo
-//         }
-//         this.ramas.push(rama);
-//       });
-//     }
-//   },
+</script>
+<script>
+export default {
+  mounted() {
+    console.log(this.$store.state);
+  }
 
-// }
+}
+
 </script>
 
 <template>

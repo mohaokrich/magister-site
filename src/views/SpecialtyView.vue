@@ -21,6 +21,37 @@ const options = [
 
 
 </script>
+<script>
+    export default {
+        computed: {
+            rama: {
+                get() {
+                    return this.$store.state.rama
+                },
+                set(value) {
+                    this.$store.commit('setRama', value)
+                }
+            },
+            provincia: {
+                get() {
+                    return this.$store.state.provincia
+                },
+                set(value) {
+                    this.$store.commit('setProvincia', value)
+                }
+            },
+            alumno: {
+                get() {
+                    return this.$store.state.alumno
+                },
+                set(value) {
+                    this.$store.commit('setAlumno', value)
+                }
+            }
+        }
+    };
+    
+</script> 
 
 <template>
     <Layaout>
@@ -32,14 +63,14 @@ const options = [
                 <div>
                     <h3 class="text-xl font-extrabold">Rama</h3>
                     <h4 class="text-xl font-extralight">(Selecciona una opción)</h4>
-                    <select name="ramas" id="" class="border p-4 w-full rounded-lg border-gray-400 mt-5">
+                    <select name="ramas" v-model="rama" id=""  class="border p-4 w-full rounded-lg border-gray-400 mt-5">
                           <option  v-for="rama in ramas" :key="rama.id" :value="rama.titulo">{{ rama.titulo }}</option>
                     </select>
                 </div>
                 <div class="pr-0">
                     <h3 class="text-xl font-extrabold">Provincia</h3>
                     <h4 class="text-xl font-extralight">(Selecciona una opción)</h4>
-                    <select name="provincias" id="" class="border p-4 w-full rounded-lg border-gray-400 mt-5">
+                    <select name="provincias" v-model="provincia" id="" class="border p-4 w-full rounded-lg border-gray-400 mt-5">
                           <option v-for="province in provinces" :key="province.id" :value="province.titulo">{{ province.titulo }}</option>
                     </select>
                 </div>
@@ -49,7 +80,7 @@ const options = [
                     <a class="text-xl text-[#0BC6FE] font-semibold" href="#">Consulta condiciones ></a>
                     <ul class="flex md:grid-cols-3 lg:flex-row flex-col gap-4">
                         <li v-for= "option in options" :key = "option.id" class="space-y-6">
-                            <input type="radio" :id="option.value" name="hosting" :value="option.value" class="hidden peer"
+                            <input type="radio" v-model="alumno" :id="option.value" name="hosting" :value="option.value" class="hidden peer"
                                 required>
                             <label :for="option.value"
                                 class="inline-flex justify-between items-center p-5 sm:px-8 w-full text-gray-500 bg-white rounded-lg border border-blue-900 cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-[#0A3868] peer-checked:bg-[#0A3868]  peer-checked:text-white  hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
