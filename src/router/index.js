@@ -7,6 +7,7 @@ import StudentView from '../views/StudentView.vue'
 import AddressVue from '../views/AddressVue.vue'
 import PaymentVue from '../views/PaymentVue.vue'
 import PageNotFound from '../views/PageNotFound.vue'
+import LandingVue from '../views/LandingVue.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -70,8 +71,17 @@ const router = createRouter({
       name: 'Pago',
       component: PaymentVue,
       meta: {
-        next: '',
+        next: 'Reserva',
         prev: 'Direccion'
+      }
+    },
+    {
+      path: '/reserva',
+      name: 'Reserva',
+      component: LandingVue,
+      meta: {
+        next: '',
+        prev: 'Pago'
       }
     },
     {
